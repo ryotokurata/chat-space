@@ -28,26 +28,26 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false, index: true|
 ### Association
-- has_many :group, through: :users_group
-- has_many :massage
+- has_many :groups, through: :users_group
+- has_many :massages
+  has_many :users_groups
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|null: false|
 ### Association
-- has_many :user
-- has_many :massage
-- has_many :users_group
+- has_many :users, through: :users_groups
+- has_many :massages
+- has_many :users_groups
 
 ## users_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -57,6 +57,8 @@ Things you may want to cover:
 |------|----|-------|
 |text|text||
 |image|text||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
