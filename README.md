@@ -37,7 +37,7 @@ Things you may want to cover:
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|null: false|
+|name|string|null: false|
 ### Association
 - has_many :users, through: :users_groups
 - has_many :massages
@@ -57,8 +57,8 @@ Things you may want to cover:
 |------|----|-------|
 |text|text||
 |image|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
