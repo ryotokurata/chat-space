@@ -58,6 +58,7 @@ Things you may want to cover:
 |text|text||
 |image|text||
 
+
 ### Association
 - belongs_to :group
 - belongs_to :user
