@@ -1,0 +1,40 @@
+.flash-box
+  グループ作成しました
+.chat  
+  .chat__side
+    .chat__side__header
+      .chat__side__header__box
+        .chat__side__header__box__user-name
+          USERNAME
+        .chat__side__header__box__menu
+          .chat__side__header__box__menu__new-group
+            %i.fa.fa-edit
+            %span<>
+          .chat__side__header__box__menu__edit-user
+            %i.fa.fa-cog
+            %span<>      
+    .chat__side__groups
+      = render 'messages/groups'
+      = render 'messages/groups'
+  .chat__main
+    .chat__main__header
+      .chat__main__header__left-box
+        .chat__main__header__left-box__current-group
+          SAMPLE GROUPS
+        .chat__main__header__left-box__member-list
+          Member :
+          .chat__main__header__left-box__menber-list__member
+            samplemember
+      .chat__main__header__edit-btn
+        Edit
+    .chat__main__messages
+      = render 'messages/message-box'
+      = render 'messages/message-box'
+    .chat__main__form
+      .chat__main__form__new-message
+        %form 
+          %input.chat__main__form__new-message__input-box{placeholder:  "  type a message", type:  "text"}/
+          %i.fa.fa-image               
+        .chat__main__form__new-message__message
+          %form
+            %input.chat__main__form__new-message__message__send{type:  "submit", value:  "Send"}/
