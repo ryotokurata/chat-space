@@ -8,10 +8,10 @@
           USERNAME
         .chat__side__header__box__menu
           .chat__side__header__box__menu__new-group
-            <i class="fa fa-edit"></i>
+            %i.fa.fa-edit
             %span<>
           .chat__side__header__box__menu__edit-user
-            <i class="fa fa-cog"></i>
+            %i.fa.fa-cog
             %span<>      
     .chat__side__groups
       = render 'messages/groups'
@@ -34,7 +34,7 @@
       .chat__main__form__new-message
         %form 
           %input.chat__main__form__new-message__input-box{placeholder:  "  type a message", type:  "text"}/
-          <i class="fa fa-image"></i>               
+          %i.fa.fa-image               
         .chat__main__form__new-message__message
           %form
             %input.chat__main__form__new-message__message__send{type:  "submit", value:  "Send"}/
