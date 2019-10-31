@@ -1,0 +1,47 @@
+.flash-box
+.chat  
+  .chat__side
+    .chat__side__header
+      .chat__side__header__box
+        %h3.chat__side__header__box__user-name
+          = current_user.name
+        .chat__side__header__box__menu
+          .chat__side__header__box__menu__new-group
+            = link_to new_group_path do
+              = fa_icon 'pencil-square-o', class: 'icon'
+          .chat__side__header__box__menu__edit-user
+            = link_to edit_user_path(current_user) do
+              = fa_icon 'cog', class: 'icon' 
+    .chat__side__groups
+      - current_user.groups.each do |group|
+        .chat__side__groups__group
+          = link_to group_messages_path(group) do
+            .chat__side__groups__group__name
+              = group.name
+        .chat__side__groups__group__message
+          = group.show_last_message
+   
+  .chat__main
+    .chat__main__header
+      .chat__main__header__left-box
+        .chat__main__header__left-box__current-group
+          samplegroup
+        .chat__main__header__left-box__member-list
+          Member :
+          .chat__main__header__left-box__menber-list__member
+            samplemember
+      .chat__main__header__edit-btn
+        Edit
+    .chat__main__messages
+      = render @messages
+    .chat__main__form
+      .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+
