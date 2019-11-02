@@ -1,0 +1,29 @@
+.flash-box
+.chat 
+  = render "shared/side_bar" 
+  .chat__main
+    .chat__main__header
+      - current_user.groups.each do |group|
+        .chat__main__header__left-box
+          %h3.chat__main__header__left-box__current-group
+            = group.name
+          .chat__main__header__left-box__member-list
+            - member =  "Member: "
+            .chat__main__header__left-box__menber-list__member
+              - @group.users.each do |user|
+                - member = member+"#{user.name}"
+              = member
+        %li.chat__main__header__edit-btn
+          =link_to 'Edit', edit_group_path(@group),class: "EDITlink"
+    .chat__main__messages
+      = render @messages
+    .chat__main__form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chat__main__form__message', placeholder: 'type a message'
+        .chat__main__form__mask
+          = f.label :image, class: 'chat__main__form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+
