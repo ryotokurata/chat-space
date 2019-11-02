@@ -1,5 +1,4 @@
 .chat {
-  width: calc(100% - 300px);
   .header {
     box-sizing: border-box;
     height: 100px;
@@ -13,7 +12,7 @@
       }
       &__members {
         //@include flexbox;
-        color: $light_gray;
+        color: #999;
         font-size: 12px;
         margin-top: 15px;
         .member {
