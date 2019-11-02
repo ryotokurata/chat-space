@@ -35,10 +35,9 @@ $(document).on('turbolinks:load', function(){
     .done(function(message){
       var html = buildMessage(message);
       $('.chat__main__messages').append(html)
-      $('#message_content').val('')
+      $("#new_message")[0].reset();
         $('.chat__main__messages').animate({
-      scrollTop: $('.chat__main__messages')[0].scrollHeight}, "fast");
-      $(".chat__mchain__form__form")[0].reset();
+          scrollTop: $('.chat__main__messages')[0].scrollHeight}, "fast");
         })
         
     .fail(function(){
