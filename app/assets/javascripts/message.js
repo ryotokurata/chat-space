@@ -39,7 +39,6 @@ $(document).on('turbolinks:load', function(){
         $('.chat__main__messages').animate({
       scrollTop: $('.chat__main__messages')[0].scrollHeight}, "fast");
       $(".chat__mchain__form__form")[0].reset();
-      
         })
         
     .fail(function(){
