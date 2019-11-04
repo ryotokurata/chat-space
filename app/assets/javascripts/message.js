@@ -1,10 +1,8 @@
 $(document).on('turbolinks:load', function(){
   function buildMessage(message){
-    
     var img = (message.image.url) ? `<img class= "chat__main__messages__message__lower-message__image" src=${message.image.url} >` : "";
-    if (message.content && img) {
     var html = `<div class="chat__main__messages__message"data-id="${message.id}">
-    <div class="chat__main__messages__message__upper-message">
+    ｀<div class="chat__main__messages__message__upper-message">
       <div class="chat__main__messages__message__upper-message__user-name">
           ${message.name}
       </div>
@@ -19,41 +17,7 @@ $(document).on('turbolinks:load', function(){
           ${img} 
     </div>
   </div>`
-    } else if (message.content) {
-     var html = `<div class="chat__main__messages__message"data-id="${message.id}">
-     <div class="chat__main__messages__message__upper-message">
-       <div class="chat__main__messages__message__upper-message__user-name">
-           ${message.name}
-       </div>
-       <div class="chat__main__messages__message__upper-message__date">
-           ${message.created_at}
-       </div>
-     </div>
-     <div class="chat__main__messages__message__lower-message">
-       <p class="chat__main__messages__message__lower-message__content">
-           ${message.content}
-       </p>
-           ${img} 
-     </div>
-   </div>`
-    } else if (img) {
-      var html = `<div class="chat__main__messages__message"data-id="${message.id}">
-     <div class="chat__main__messages__message__upper-message">
-       <div class="chat__main__messages__message__upper-message__user-name">
-           ${message.name}
-       </div>
-       <div class="chat__main__messages__message__upper-message__date">
-           ${message.created_at}
-       </div>
-     </div>
-     <div class="chat__main__messages__message__lower-message">
-       <p class="chat__main__messages__message__lower-message__content">
-           ${message.content}
-       </p>
-           ${img} 
-     </div>
-   </div>`
-   };
+    
    return html;
      
   }
@@ -71,7 +35,6 @@ $(document).on('turbolinks:load', function(){
     })
 
     .done(function(message){
-      console.log(message);
       var html = buildMessage(message);
       $('.chat__main__messages').append(html)
       $("#new_message")[0].reset();
@@ -113,5 +76,5 @@ $(document).on('turbolinks:load', function(){
         });
         
     };
-  setInterval(reloadMessages,10000);
+    setInterval(reloadMessages,10000);
 });
