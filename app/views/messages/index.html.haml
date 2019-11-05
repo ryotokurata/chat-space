@@ -3,17 +3,18 @@
   = render "shared/side_bar" 
   .chat__main
     .chat__main__header
-      - current_user.groups.each do |group|
-        .chat__main__header__left-box
-          %h3.chat__main__header__left-box__current-group
-            = group.name
+      /- current_user.groups.each do |group|
+      .chat__main__header__left-box
+        %h3.chat__main__header__left-box__current-group
+          = @group.name
           .chat__main__header__left-box__member-list
             - member =  "Member: "
             .chat__main__header__left-box__menber-list__member
               - @group.users.each do |user|
                 - member = member+"#{user.name}"
               = member
-        %li.chat__main__header__edit-btn
+      .chat__main__header__right-box
+        %li.chat__main__header__right-box__edit-btn
           =link_to 'Edit', edit_group_path(@group),class: "EDITlink"
     .chat__main__messages
       = render @messages
