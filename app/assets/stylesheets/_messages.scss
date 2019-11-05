@@ -30,7 +30,7 @@
         }
         .icon {
           color: $white;
-          //font-size: $side_header_font;
+          font-size:16px;
         }
       }
     }
@@ -42,15 +42,13 @@
       .group {
         box-sizing: border-box;
         padding: 20px 0 40px;
-        &__name {
+        .group__name {
           color: $white;
-          text-decoration: none;
-         // font-size: $side_group_name;
+          //font-size:
         }
-        &__message {
+        .group__message {
           color: $white;
-          text-decoration: none;
-         // font-size: $side_group_message;
+          font-size: 10px;
           margin-top: 5px;
         }
       }
@@ -69,38 +67,44 @@
        border-bottom: solid 1px #eee;
        overflow: scroll;
       &__left-box{
-        margin-top: 35px;    
+        margin-top: 35px; 
+        width: 600px;  
         &__current-group{
+          height: 75px;
           font-size: 20px;
           color: #333;
-          margin-bottom: 15px;
         }
         &__member-list{
           display: flex;
           font-size: 12px;
           color: #999999;
+          margin-top: 10px;
         }
       }
-      &__edit-btn{
+      &__right-box{
+        background-color: aquamarine;
+        &__edit-btn{
+        margin-top: 35px;
         height: 40px;
         line-height: 40px;
         padding: 0 20px;
-        margin-top: 30px;
         border: solid 1px #38aef0;
         position: absolute;
         right: 40px;
         list-style: none;
-        .EDITlink{
+          .EDITlink{
           text-decoration: none;
           color: #38aef0;
-          font-size: 15px;
+          font-size: 17px;
           
+          }
         }
       }
     }
+
     &__messages{
         background-color: #fafafa;
-        height: calc(100vh - 300px);
+        height: calc(100vh - 283px);
         padding: 46px 40px;
         overflow: scroll;
        
@@ -118,6 +122,7 @@
             font-size: 5px;
             color:#999999;
             padding-left: 10px;
+            padding-top: 5px;
           }
         }
         &__lower-message{
@@ -132,21 +137,22 @@
     &__form {
       background-color: #DDDDDD;
       position: fixed;
-      width: calc(100% - 390px);
-      //box-sizing: border-box;
+      width: calc(100% - 300px);
+      box-sizing: border-box;
       height: 90px;
       padding: 20px 50px 20px 40px;
       &__message {
         border: none;
         float: left;
         height: 50px;
-        width: calc(100% - 150px);
+        width: calc(100% - 160px);
+        padding-left: 10px;
       }
       &__mask {
         background-color: $white;
         float: left;
         height: 50px;
-        padding-right: 10px;
+        padding-right: 20px;
         &__image {
           font-size: 20px;
           line-height: 50px;
@@ -167,4 +173,7 @@
       }
     }
   } 
+}
+a {
+  text-decoration: none;
 }
