@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'cha-tspacekurata'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonws.com/cha-tspacekurata'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/cha-tspacekurata'
 end
