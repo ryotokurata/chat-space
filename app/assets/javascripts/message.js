@@ -100,6 +100,9 @@ $(document).on('turbolinks:load', function(){
           data: {last_id: last_message_id}
         })
         .done(function(messages) {
+          if (message.length === 0){
+            return;
+          };
           var insertMessage = '';
           messages.forEach(function (message) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
             insertMessage = buildMessage(message); //メッセージが入ったHTMLを取得
