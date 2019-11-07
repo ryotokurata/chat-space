@@ -61,6 +61,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'devise'
   gem 'erb2haml'
   gem 'carrierwave'
+  gem 'fog-aws'
   gem 'mini_magick'
   gem 'jquery-rails'
 group :production do
