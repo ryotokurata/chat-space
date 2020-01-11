@@ -3,7 +3,7 @@
   = render "shared/side_bar" 
   .chat__main
     .chat__main__header
-      /- current_user.groups.each do |group|
+      - current_user.groups.each do |group|
       .chat__main__header__left-box
         %h3.chat__main__header__left-box__current-group
           = @group.name

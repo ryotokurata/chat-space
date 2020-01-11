@@ -69,7 +69,6 @@ $(document).on('turbolinks:load', function(){
       processData: false,
       contentType: false,
     })
-
     .done(function(message){
       var html = buildMessage(message);
       $('.chat__main__messages').append(html)
@@ -86,7 +85,6 @@ $(document).on('turbolinks:load', function(){
     })
     
   })
-
     function reloadMessages() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
         var last_message_id = $('.chat__main__messages__message:last').data("message-id");
